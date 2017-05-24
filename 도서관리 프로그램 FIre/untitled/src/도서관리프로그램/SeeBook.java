@@ -1,14 +1,10 @@
 package 도서관리프로그램;
 
-        import javax.swing.JPanel;
+        import javax.swing.*;
         import java.awt.Color;
-        import javax.swing.JLabel;
         import java.awt.Font;
         import java.io.BufferedReader;
-        import java.io.FileNotFoundException;
-        import java.io.FileReader;
-        import javax.swing.JTextArea;
-        import javax.swing.JScrollBar;
+        import java.io.*;
 
 public class SeeBook extends JPanel {
 
@@ -16,12 +12,12 @@ public class SeeBook extends JPanel {
      * Create the panel.
      */
     public SeeBook()  {
-
+        FileReader fileReader =null;
         setBackground(Color.BLACK);
         setLayout(null);
 
         JScrollBar scrollBar = new JScrollBar();
-        add(scrollBar);
+
         scrollBar.setForeground(Color.BLACK);
         scrollBar.setBackground(Color.WHITE);
         scrollBar.setBounds(472, 63, 21, 478);
@@ -31,10 +27,30 @@ public class SeeBook extends JPanel {
         lblNewLabel.setBounds(202, 12, 106, 51);
         lblNewLabel.setForeground(Color.WHITE);
         add(lblNewLabel);
-
+        JSlider slider = new JSlider();
+        slider.setBounds(14, 515, 457, 26);
         JTextArea textArea = new JTextArea();
-        textArea.setBounds(14, 63, 479, 478);
+        textArea.setBounds(14, 63, 500, 600);
+        textArea.add(slider);
         add(textArea);
-
+        textArea.add(scrollBar);
+        try
+        {
+            fileReader = new FileReader("책목록");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String str = "";
+            while ((str = bufferedReader.readLine())!=null) {
+                textArea.append(str+"\n");
+                System.out.println(str);
+            }
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

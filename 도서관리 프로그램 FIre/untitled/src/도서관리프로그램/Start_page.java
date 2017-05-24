@@ -64,6 +64,7 @@ public class Start_page extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 setContentPane(book1);
                 setBounds(100, 100, 500, 530);
+                requestFocus();
             }
         });
         JPanel panel_2 = new JPanel();
@@ -88,6 +89,7 @@ public class Start_page extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 setContentPane(people);
                 setBounds(100, 100, 500, 530);
+                requestFocus();
             }
         });
 
@@ -114,13 +116,13 @@ public class Start_page extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 setContentPane(policy);
                 setBounds(100, 100, 500, 530);
+                requestFocus();
             }
         });
         this.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 if(e.getKeyCode() == KeyEvent.VK_BACK_SPACE)
-                    getContentPane().setVisible(false);
                 setBounds(100, 100, 500, 530);
                     setContentPane(contentPane);
             }

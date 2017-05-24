@@ -47,6 +47,7 @@ public class relationgpeople extends JPanel {
                             page.dispose();
                     }
                 });
+                requestFocus();
              page.setContentPane(setMember);
             }
         });
@@ -79,6 +80,7 @@ public class relationgpeople extends JPanel {
                             page.dispose();
                     }
                 });
+                requestFocus();
                 page.setContentPane(deleteMember);
             }
         });
@@ -110,6 +112,7 @@ public class relationgpeople extends JPanel {
                             page.dispose();
                     }
                 });
+                requestFocus();
                 page.setContentPane(checkMember);
             }
         });

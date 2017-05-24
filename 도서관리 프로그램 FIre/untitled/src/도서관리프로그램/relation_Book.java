@@ -8,14 +8,14 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class relation_Book extends JPanel {
-     SeeBook book = new SeeBook();
+
     /**
      * Create the panel.
      */
     public relation_Book() {
+
         setBackground(Color.BLACK);
         setLayout(null);
-
         JPanel panel = new JPanel();
         panel.setBackground(Color.BLACK);
         panel.setBounds(0, 255, 501, 127);
@@ -27,6 +27,13 @@ public class relation_Book extends JPanel {
         button_1.setForeground(Color.BLACK);
         button_1.setFont(new Font("a옛날사진관3", Font.PLAIN, 19));
         button_1.setBackground(Color.WHITE);
+        button_1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                requestFocus();
+            }
+        });
+
         panel.add(button_1);
 
         JLabel label_3 = new JLabel("\uCC45 \uB4F1\uB85D");
@@ -65,7 +72,8 @@ public class relation_Book extends JPanel {
                             page.dispose();
                     }
                 });
-                page.setContentPane(book);
+                requestFocus();
+                page.setContentPane(new SeeBook());
             }
         });
 
@@ -88,10 +96,12 @@ public class relation_Book extends JPanel {
         button.setBackground(Color.WHITE);
         panel_2.add(button);
         button.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                requestFocus();
             }
+
         });
 
         JPanel panel_3 = new JPanel();
@@ -111,6 +121,12 @@ public class relation_Book extends JPanel {
         btnNewButton.setForeground(Color.BLACK);
         btnNewButton.setBackground(Color.WHITE);
         btnNewButton.setBounds(311, 47, 105, 27);
+        btnNewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                requestFocus();
+            }
+        });
         panel_3.add(btnNewButton);
         this.setFocusable(true);
     }
