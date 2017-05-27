@@ -14,15 +14,16 @@ public class Start_page extends JFrame {
 
     private JPanel contentPane;
 
-
-    relation_Book book1 = new relation_Book();
-    relationgpeople people = new relationgpeople();
-    relationpolicy policy = new relationpolicy();
-
     public Start_page() {
+
+        relation_Book book1 = new relation_Book(this);
+        relationgpeople people = new relationgpeople(this);
+        relationpolicy policy = new relationpolicy();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         setBounds(100, 100, 500, 513);
         contentPane = new JPanel();
+        contentPane.setBackground(Color.BLACK);
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
@@ -64,6 +65,7 @@ public class Start_page extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 setContentPane(book1);
                 setBounds(100, 100, 500, 530);
+                getContentPane().setBounds(0, 0, 500, 530);
                 requestFocus();
             }
         });
@@ -89,6 +91,7 @@ public class Start_page extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 setContentPane(people);
                 setBounds(100, 100, 500, 530);
+                getContentPane().setBounds(0, 0, 500, 530);
                 requestFocus();
             }
         });
@@ -116,6 +119,7 @@ public class Start_page extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 setContentPane(policy);
                 setBounds(100, 100, 500, 530);
+                getContentPane().setBounds(0, 0, 500, 530);
                 requestFocus();
             }
         });

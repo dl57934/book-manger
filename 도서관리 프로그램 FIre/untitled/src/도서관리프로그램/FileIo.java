@@ -17,16 +17,4 @@ public class FileIo  {
 
     public FileIo() throws IOException {
     }
-
-    public void read(BufferedReader Fire) throws IOException {
-     String str;
-     while(true)
-     {
-         str = Fire.readLine();
-         if(str==null)
-             break;
-         System.out.println(str);
-     }
-     Fire.close();
- }
                }

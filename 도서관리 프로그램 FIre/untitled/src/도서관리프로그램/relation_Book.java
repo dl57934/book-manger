@@ -12,7 +12,7 @@ public class relation_Book extends JPanel {
     /**
      * Create the panel.
      */
-    public relation_Book() {
+    public relation_Book(JFrame jFrame ) {
 
         setBackground(Color.BLACK);
         setLayout(null);
@@ -30,7 +30,8 @@ public class relation_Book extends JPanel {
         button_1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                requestFocus();
+                jFrame.setBounds(100,100,500,600);
+                jFrame.setContentPane(new AddBook(jFrame));
             }
         });
 
@@ -63,17 +64,8 @@ public class relation_Book extends JPanel {
         button_2. addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Start_page page = new Start_page();
-                page.setBounds(100,100,530,600);
-                page.addKeyListener(new KeyAdapter() {
-                    @Override
-                    public void keyPressed(KeyEvent e) {
-                        if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
-                            page.dispose();
-                    }
-                });
-                requestFocus();
-                page.setContentPane(new SeeBook());
+                jFrame.setBounds(100,100,530,600);
+                jFrame.setContentPane(new SeeBook(jFrame));
             }
         });
 
@@ -96,12 +88,11 @@ public class relation_Book extends JPanel {
         button.setBackground(Color.WHITE);
         panel_2.add(button);
         button.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
-                requestFocus();
+                jFrame.setBounds(100,100,480,600);
+             jFrame.setContentPane(new returnBook());
             }
-
         });
 
         JPanel panel_3 = new JPanel();
@@ -124,7 +115,8 @@ public class relation_Book extends JPanel {
         btnNewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                requestFocus();
+                jFrame.setBounds(100,100,480,500);
+            jFrame.setContentPane(new SelectionBurrow(jFrame));
             }
         });
         panel_3.add(btnNewButton);
