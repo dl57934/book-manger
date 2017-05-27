@@ -14,7 +14,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class CheckMemberStaff extends JPanel {
-    private JTable table;
+    JTable table;
     FileReader fileReader;
     /**
      * Create the panel.

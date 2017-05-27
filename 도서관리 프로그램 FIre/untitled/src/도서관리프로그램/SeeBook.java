@@ -11,9 +11,8 @@ import java.io.FileReader;
 import javax.swing.table.DefaultTableModel;
 
 public class SeeBook extends JPanel {
-    private JTable table;
+    JTable table;
     FileReader fileReader;
-    String data [][];
     /**
      * Create the panel.
      */

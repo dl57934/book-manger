@@ -116,7 +116,7 @@ public class relation_Book extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 jFrame.setBounds(100,100,480,500);
-            jFrame.setContentPane(new SelectionBurrow(jFrame));
+            jFrame.setContentPane(new BurrowBookMember(jFrame));
             }
         });
         panel_3.add(btnNewButton);

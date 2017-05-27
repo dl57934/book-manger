@@ -11,7 +11,7 @@ public class SelectionBurrow extends JPanel {
     /**
      * Create the panel.
      */
-    public SelectionBurrow(JFrame jFrame) {
+    public SelectionBurrow(JFrame jFrame,int i) {
         setBackground(Color.BLACK);
         setLayout(null);
 
@@ -29,7 +29,7 @@ public class SelectionBurrow extends JPanel {
         label_2.setBounds(169, 251, 106, 46);
         add(label_2);
 
-        JButton btnPush = new JButton("PUSH");
+        JButton btnPush = new JButton("PUSH1");
         btnPush.setFont(new Font("a옛날사진관3", Font.PLAIN, 25));
         btnPush.setForeground(Color.WHITE);
         btnPush.setBackground(Color.BLACK);
@@ -38,10 +38,24 @@ public class SelectionBurrow extends JPanel {
         btnPush.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            if(i== 0)
+            {
+                jFrame.setBounds(100,100,480,580);
+                jFrame.setContentPane(new BurrowExtends(jFrame,i));
+            }
+                if (i==1)
+                {
+                    jFrame.setBounds(100,100,480,580);
+                    jFrame.setContentPane(new BurrowExtends(jFrame,i));
+                }
+                if(i==2)
+                {
+                    jFrame.setBounds(100,100,480,580);
+                    jFrame.setContentPane(new BurrowExtends(jFrame,i));
+                }
             }
         });
-        JButton button = new JButton("PUSH");
+        JButton button = new JButton("PUSH2");
         button.setForeground(Color.WHITE);
         button.setFont(new Font("a옛날사진관3", Font.PLAIN, 25));
         button.setBackground(Color.BLACK);
@@ -50,8 +64,22 @@ public class SelectionBurrow extends JPanel {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                jFrame.setBounds(100,100,480,600);
-                jFrame.setContentPane(new BurrowBook());
+
+                if(i==0)
+                {
+                    jFrame.setBounds(100,100,480,580);
+                    jFrame.setContentPane(new BurrowBookStudent(jFrame));
+                }
+                else if(i == 1)
+                {
+                    jFrame.setBounds(100,100,480,580);
+                    jFrame.setContentPane(new BurrowBookGuest(jFrame));
+                }
+                else if (i==2)
+                {
+                    jFrame.setBounds(100,100,480,580);
+                    jFrame.setContentPane(new BurrowBookStaff(jFrame));
+                }
             }
         });
 
