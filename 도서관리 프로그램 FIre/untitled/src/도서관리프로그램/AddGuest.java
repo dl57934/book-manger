@@ -9,10 +9,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class AddGuest extends JPanel {
-    String name ;
-    String num;
-    String job;
-    String fusion;
+    String name ="";
+    String num="";
+    String job="";
+    String fusion="";
     /**
      * Create the panel.
      */

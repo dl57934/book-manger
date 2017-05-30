@@ -10,8 +10,8 @@ import javax.swing.event.AncestorListener;
 
 public class BurrowBookStudent extends JPanel {
     String  bookName;
-    String  name;
-    String  membernum;
+    String  name="";
+    String  membernum="";
     int i =0;
     /**
      * Create the panel.
@@ -48,7 +48,7 @@ public class BurrowBookStudent extends JPanel {
                             System.out.println("일치합니다");
                             break;
                         }
-                        else if (jtable.table.getValueAt(i,0) == null)
+                        else if (jtable.table.getValueAt(i,0) .equals( null))
                         {
                             jFrame.setBounds(100,100,450,450);
                             jFrame.setContentPane(new CheckSameName());
@@ -76,7 +76,7 @@ public class BurrowBookStudent extends JPanel {
                         if (jtable.table.getValueAt(i, 1).equals(membernum)) {
                             System.out.println("일치합니다");
                             jFrame.setBounds(100, 100, 450, 450);
-                            jFrame.setContentPane(new CompleteLogin(jFrame,name));
+                            jFrame.setContentPane(new CompleteLogin(jFrame,name,0));
                             break;
                         } else if (jtable.table.getValueAt(i, 0) == null) {
                             jFrame.setBounds(100, 100, 450, 450);

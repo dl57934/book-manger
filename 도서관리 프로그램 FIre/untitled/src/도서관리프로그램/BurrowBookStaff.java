@@ -6,8 +6,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class BurrowBookStaff extends JPanel {
-       String name ;
-       String memberNum;
+       String name="" ;
+       String memberNum="";
        int i = 0;
     /**
      * Create the panel.
@@ -80,7 +80,7 @@ public class BurrowBookStaff extends JPanel {
                        if (checkMember.table.getValueAt(i, 1).equals(memberNum)) {
                            System.out.println("일치합니다");
                            jFrame.setBounds(100,100,450,480);
-                           jFrame.setContentPane(new CompleteLogin(jFrame,name));
+                           jFrame.setContentPane(new CompleteLogin(jFrame,name,0));
                            break;
                        }
                        else if(checkMember.table.getValueAt(i,1)==null)

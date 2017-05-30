@@ -17,10 +17,10 @@ public class AddStudent extends JPanel {
     private JTextField textField;
     private JTextField textField_1;
     private JTextField textField_2;
-    String name;
-    String number;
-    String major;
-    String fusion;
+    String name="";
+    String number="";
+    String major="";
+    String fusion="";
     FileWriter fileWriter;
     /**
      * Create the panel.
@@ -75,21 +75,20 @@ public class AddStudent extends JPanel {
         textField_2.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                major = textField_2.getText();
-                fusion = "\n"+name+"/"+number + "/"+major;
-                System.out.println(fusion);
-                try
-                {
-                    fileWriter = new FileWriter("학생목록",true);
-                    BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                    bufferedWriter.write(fusion);
-                    bufferedWriter.close();
-                    jFrame.setBounds(100,100,480,600);
-                    jFrame.setContentPane(new CompleteAddBook());
-                }
-                catch (Exception g)
-                {
-                    g.printStackTrace();
+                if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    major = textField_2.getText();
+                    fusion = "\n" + name + "/" + number + "/" + major;
+                    System.out.println(fusion);
+                    try {
+                        fileWriter = new FileWriter("학생목록", true);
+                        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                        bufferedWriter.write(fusion);
+                        bufferedWriter.close();
+                        jFrame.setBounds(100, 100, 480, 480);
+                        jFrame.setContentPane(new completeMember());
+                    } catch (Exception g) {
+                        g.printStackTrace();
+                    }
                 }
             }
         });

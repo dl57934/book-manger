@@ -9,10 +9,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 
 public class AddStaff extends JPanel {
-String name;
-String num;
-String High;
-String fusion;
+String name="";
+String num="";
+String High="";
+String fusion="";
     /**
      * Create the panel.
      */

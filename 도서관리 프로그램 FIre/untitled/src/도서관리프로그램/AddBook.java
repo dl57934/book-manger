@@ -5,16 +5,21 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 
 
 public class AddBook extends JPanel {
-String bookName;
-String author;
-String whoMade;
-String fusion;
+String bookName="";
+String author="";
+String whoMade="";
+String fusion="";
+String str2="";
 FileWriter writer = null;
+FileReader fileReader ;
+FileWriter writer2;
     /**
      * Create the panel.
      */
@@ -84,16 +89,28 @@ FileWriter writer = null;
                 if(e.getKeyCode()== KeyEvent.VK_ENTER) {
                     whoMade = textArea_2.getText();
                     System.out.println(whoMade);
-                    fusion = "\n"+bookName +"/"+author + "/"+whoMade;
+                    fusion = bookName +"/"+author + "/"+whoMade+"/"+"대출가능";
                     System.out.println(fusion);
                     try
                     {
                         writer = new FileWriter("책목록",true);
                         BufferedWriter bufferedWriter = new BufferedWriter(writer);
+                        bufferedWriter.newLine();
                         bufferedWriter.write(fusion);
                         bufferedWriter.close();
                         jFrame.setBounds(100,100,480,600);
                         jFrame.setContentPane(new CompleteAddBook());
+                        fileReader = new FileReader("책목록");
+                        BufferedReader bufferedReader = new BufferedReader(fileReader);
+                        writer2 = new FileWriter("책목록2");
+                        BufferedWriter bufferedWriter1 = new BufferedWriter(writer2);
+                        while((str2=bufferedReader.readLine())!=null)
+                        {
+                            bufferedWriter1.append(str2);
+                            bufferedWriter1.newLine();
+                        }
+                        bufferedReader.close();
+                        bufferedWriter1.close();
                     }
                     catch (Exception g)
                     {

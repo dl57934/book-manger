@@ -29,7 +29,7 @@ public class SelectionBurrow extends JPanel {
         label_2.setBounds(169, 251, 106, 46);
         add(label_2);
 
-        JButton btnPush = new JButton("PUSH1");
+        JButton btnPush = new JButton("PUSH2");
         btnPush.setFont(new Font("a옛날사진관3", Font.PLAIN, 25));
         btnPush.setForeground(Color.WHITE);
         btnPush.setBackground(Color.BLACK);
@@ -38,24 +38,24 @@ public class SelectionBurrow extends JPanel {
         btnPush.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            if(i== 0)
-            {
+                 if(i== 0) //학생
+                 {
                 jFrame.setBounds(100,100,480,580);
                 jFrame.setContentPane(new BurrowExtends(jFrame,i));
-            }
-                if (i==1)
+                 }
+                if (i==1) //게스트
                 {
                     jFrame.setBounds(100,100,480,580);
                     jFrame.setContentPane(new BurrowExtends(jFrame,i));
                 }
-                if(i==2)
+                if(i==2)  //스태프
                 {
                     jFrame.setBounds(100,100,480,580);
                     jFrame.setContentPane(new BurrowExtends(jFrame,i));
                 }
             }
         });
-        JButton button = new JButton("PUSH2");
+        JButton button = new JButton("PUSH1");
         button.setForeground(Color.WHITE);
         button.setFont(new Font("a옛날사진관3", Font.PLAIN, 25));
         button.setBackground(Color.BLACK);

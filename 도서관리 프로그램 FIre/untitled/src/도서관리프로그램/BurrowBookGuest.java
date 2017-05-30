@@ -3,11 +3,16 @@ package 도서관리프로그램;
 import javax.swing.*;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class BurrowBookGuest extends JPanel {
     private JTextField textField;
     private JTextField textField_1;
-
+    CheckMemberguset checkMemberguset = new CheckMemberguset();
+    String name="";
+    String number="";
+    int i =0;
     /**
      * Create the panel.
      */
@@ -40,11 +45,62 @@ public class BurrowBookGuest extends JPanel {
         textField.setBounds(137, 168, 162, 24);
         add(textField);
         textField.setColumns(10);
-
+        textField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+               if(e.getKeyCode() == KeyEvent.VK_ENTER)
+               {
+                   i=0;
+                   name = textField.getText();
+                   System.out.println(name);
+                       while(true) {
+                           System.out.println(checkMemberguset.table.getValueAt(i, 0));
+                           if(checkMemberguset.table.getValueAt(i,0).equals(name))
+                           {
+                           System.out.println("일치합니다.");
+                               break;
+                       }
+                       else if(checkMemberguset.table.getValueAt(i,0) == null)
+                           {
+                               jFrame.setBounds(100, 100, 450, 450);
+                               jFrame.setContentPane(new CheckSameName());
+                               break;
+                           }
+                           i++;
+                   }
+               }
+            }
+        });
         textField_1 = new JTextField();
         textField_1.setColumns(10);
         textField_1.setBounds(137, 331, 162, 24);
         add(textField_1);
-
+        textField_1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_ENTER)
+                {
+                    i=0;
+                    number = textField_1.getText();
+                    while(true) {
+                        System.out.println(checkMemberguset.table.getValueAt(i, 1));
+                        if(checkMemberguset.table.getValueAt(i,1).equals(number))
+                        {
+                            System.out.println("일치합니다.");
+                            jFrame.setBounds(100,100,450,480);
+                            jFrame.setContentPane(new CompleteLogin(jFrame,name,0));
+                            break;
+                        }
+                        else if(checkMemberguset.table.getValueAt(i,1) == null)
+                        {
+                            jFrame.setBounds(100, 100, 450, 450);
+                            jFrame.setContentPane(new CheckSameName());
+                            break;
+                        }
+                        i++;
+                    }
+                }
+            }
+        });
     }
 }

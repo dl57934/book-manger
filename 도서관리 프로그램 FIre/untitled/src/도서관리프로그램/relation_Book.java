@@ -22,7 +22,7 @@ public class relation_Book extends JPanel {
         add(panel);
         panel.setLayout(null);
 
-        JButton button_1 = new JButton("push1");//책등록
+        JButton button_1 = new JButton("push3");//책등록
         button_1.setBounds(313, 49, 103, 31);
         button_1.setForeground(Color.BLACK);
         button_1.setFont(new Font("a옛날사진관3", Font.PLAIN, 19));
@@ -55,7 +55,7 @@ public class relation_Book extends JPanel {
         label_2.setFont(new Font("a옛날사진관3", Font.PLAIN, 25));
         panel_1.add(label_2);
 
-        JButton button_2 = new JButton("push2"); //등록된 책확인
+        JButton button_2 = new JButton("push4"); //등록된 책확인
         button_2.setBounds(314, 52, 103, 31);
         button_2.setForeground(Color.BLACK);
         button_2.setFont(new Font("a옛날사진관3", Font.PLAIN, 19));
@@ -81,7 +81,7 @@ public class relation_Book extends JPanel {
         label.setFont(new Font("a옛날사진관3", Font.PLAIN, 30));
         panel_2.add(label);
 
-        JButton button = new JButton("push3"); // 책반납
+        JButton button = new JButton("push2"); // 책반납
         button.setBounds(308, 48, 108, 31);
         button.setForeground(Color.BLACK);
         button.setFont(new Font("a옛날사진관3", Font.PLAIN, 19));
@@ -91,7 +91,7 @@ public class relation_Book extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 jFrame.setBounds(100,100,480,600);
-             jFrame.setContentPane(new returnBook());
+             jFrame.setContentPane(new returnBook(jFrame,1));
             }
         });
 
@@ -107,7 +107,7 @@ public class relation_Book extends JPanel {
         lblNewLabel.setBounds(63, 30, 110, 55);
         panel_3.add(lblNewLabel);
 
-        JButton btnNewButton = new JButton("push4");//책 대출
+        JButton btnNewButton = new JButton("push1");//책 대출
         btnNewButton.setFont(new Font("a옛날사진관3", Font.PLAIN, 19));
         btnNewButton.setForeground(Color.BLACK);
         btnNewButton.setBackground(Color.WHITE);
